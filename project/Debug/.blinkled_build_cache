@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BuildDb>
+    <Tool>
+        <Name>linker</Name>
+        <Parent>
+            <Path>C:\Users\ADMIN\Desktop\IAR_project\project\Debug\Exe\blinkled.out</Path>
+            <Output>
+                <Path>C:\Users\ADMIN\Desktop\IAR_project\project\Debug\List\blinkled.map</Path>
+            </Output>
+        </Parent>
+    </Tool>
+</BuildDb>

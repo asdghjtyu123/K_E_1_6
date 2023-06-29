@@ -1,0 +1,15 @@
+"D:\IAR Systems\Embedded Workbench 9.2\arm\bin\armPROC.dll" 
+
+"D:\IAR Systems\Embedded Workbench 9.2\arm\bin\armJET.dll" 
+
+"C:\Users\ADMIN\Desktop\IAR_project\project\Debug\Exe\blinkled.out" 
+
+--plugin="D:\IAR Systems\Embedded Workbench 9.2\arm\bin\armbat.dll" 
+
+--device_macro="D:\IAR Systems\Embedded Workbench 9.2\arm/config/debugger/NXP/KE1xF.dmac" 
+
+--flash_loader="D:\IAR Systems\Embedded Workbench 9.2\arm/config/flashloader/NXP/FlashKE1xZ4_64K.board" 
+
+
+
+
