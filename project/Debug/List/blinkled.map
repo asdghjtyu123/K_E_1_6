@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ELF Linker V9.40.1.364/W64 for ARM                  29/Jun/2023  14:46:08
+# IAR ELF Linker V9.40.1.364/W64 for ARM                  01/Jul/2023  00:39:22
 # Copyright 2007-2023 IAR Systems AB.
 #
 #    Output file  =
@@ -59,63 +59,78 @@ define block HEAP with size = 2K, alignment = 8 { };
           rw, block CSTACK, block PROC_STACK, block HEAP };
 "P3":  place in [from 0x400 to 0x40f] { section FlashConfig };
 
-No sections matched the following patterns:
+  Section          Kind         Address   Size  Object
+  -------          ----         -------   ----  ------
+"A0":                                     0xc0
+  .intvec          ro code          0x0   0xc0  startup_MKE16Z4.o [2]
+                                 - 0xc0   0xc0
 
-  rw  in "P2"
+"P1", part 1 of 2:                       0x20a
+  .text            ro code         0xc0  0x1b8  LedBlinking.o [1]
+  .text            ro code        0x278   0x50  system_MKE16Z4.o [2]
+  .text            ro code        0x2c8    0x2  system_MKE16Z4.o [2]
+                                - 0x2ca  0x20a
 
+"P3":                                     0x10
+  FlashConfig      ro code        0x400   0x10  startup_MKE16Z4.o [2]
+                                - 0x410   0x10
 
-  Section      Kind         Address   Size  Object
-  -------      ----         -------   ----  ------
-"A0":                                 0xc0
-  .intvec      ro code          0x0   0xc0  startup_MKE16Z4.o [2]
-                             - 0xc0   0xc0
+"P1", part 2 of 2:                       0x14c
+  .text            ro code        0x410   0x3c  zero_init3.o [4]
+  .text            ro code        0x44c    0x2  startup_MKE16Z4.o [2]
+  .text            ro code        0x450   0x28  startup_MKE16Z4.o [2]
+  .text            ro code        0x478   0x28  data_init.o [4]
+  .iar.init_table  const          0x4a0   0x10  - Linker created -
+  .text            ro code        0x4b0   0x1e  cmain.o [4]
+  .text            ro code        0x4ce    0x4  low_level_init.o [3]
+  .text            ro code        0x4d2    0x8  exit.o [3]
+  .text            ro code        0x4da    0x2  startup_MKE16Z4.o [2]
+  .text            ro code        0x4dc    0xa  cexit.o [4]
+  .text            ro code        0x4e6    0x2  startup_MKE16Z4.o [2]
+  .text            ro code        0x4e8   0x14  exit.o [5]
+  .text            ro code        0x4fc   0x1c  cstartup_M.o [4]
+  .text            ro code        0x518    0x8  startup_MKE16Z4.o [2]
+  .text            ro code        0x520    0x8  startup_MKE16Z4.o [2]
+  .text            ro code        0x528    0x8  startup_MKE16Z4.o [2]
+  .text            ro code        0x530    0x8  startup_MKE16Z4.o [2]
+  .text            ro code        0x538    0x8  startup_MKE16Z4.o [2]
+  .text            ro code        0x540    0x8  startup_MKE16Z4.o [2]
+  .text            ro code        0x548    0x8  startup_MKE16Z4.o [2]
+  .text            ro code        0x550    0x8  startup_MKE16Z4.o [2]
+  .text            ro code        0x558    0x2  startup_MKE16Z4.o [2]
+  .text            ro code        0x55a    0x2  startup_MKE16Z4.o [2]
+  .rodata          const          0x55c    0x0  zero_init3.o [4]
+                                - 0x55c  0x14c
 
-"P1", part 1 of 2:                   0x208
-  .text        ro code         0xc0  0x208  LedBlinking.o [1]
-                            - 0x2c8  0x208
+"P2", part 1 of 2:                         0x4
+  .bss             zero     0x1fff'f800    0x4  LedBlinking.o [1]
+                          - 0x1fff'f804    0x4
 
-"P3":                                 0x10
-  FlashConfig  ro code        0x400   0x10  startup_MKE16Z4.o [2]
-                            - 0x410   0x10
-
-"P1", part 2 of 2:                   0x128
-  .text        ro code        0x410   0x50  system_MKE16Z4.o [2]
-  .text        ro code        0x460    0x2  system_MKE16Z4.o [2]
-  .text        ro code        0x462    0x2  startup_MKE16Z4.o [2]
-  .text        ro code        0x464   0x28  startup_MKE16Z4.o [2]
-  .text        ro code        0x48c   0x1e  cmain.o [4]
-  .text        ro code        0x4aa    0x4  low_level_init.o [3]
-  .text        ro code        0x4ae    0x8  exit.o [3]
-  .text        ro code        0x4b6    0x2  startup_MKE16Z4.o [2]
-  .text        ro code        0x4b8    0xa  cexit.o [4]
-  .text        ro code        0x4c2    0x2  startup_MKE16Z4.o [2]
-  .text        ro code        0x4c4   0x14  exit.o [5]
-  .text        ro code        0x4d8   0x1c  cstartup_M.o [4]
-  .text        ro code        0x4f4    0x8  startup_MKE16Z4.o [2]
-  .text        ro code        0x4fc    0x8  startup_MKE16Z4.o [2]
-  .text        ro code        0x504    0x8  startup_MKE16Z4.o [2]
-  .text        ro code        0x50c    0x8  startup_MKE16Z4.o [2]
-  .text        ro code        0x514    0x8  startup_MKE16Z4.o [2]
-  .text        ro code        0x51c    0x8  startup_MKE16Z4.o [2]
-  .text        ro code        0x524    0x8  startup_MKE16Z4.o [2]
-  .text        ro code        0x52c    0x8  startup_MKE16Z4.o [2]
-  .text        ro code        0x534    0x2  startup_MKE16Z4.o [2]
-  .text        ro code        0x536    0x2  startup_MKE16Z4.o [2]
-                            - 0x538  0x128
-
-"P2":                                0x200
-  CSTACK                0x1fff'f800  0x200  <Block>
-    CSTACK     uninit   0x1fff'f800  0x200  <Block tail>
-                      - 0x1fff'fa00  0x200
+"P2", part 2 of 2:                       0x200
+  CSTACK                    0x1fff'f808  0x200  <Block>
+    CSTACK         uninit   0x1fff'f808  0x200  <Block tail>
+                          - 0x1fff'fa08  0x200
 
 Unused ranges:
 
          From           To    Size
          ----           --    ----
-        0x2c8        0x3ff   0x138
-        0x538       0xffff  0xfac8
-  0x1fff'fa00  0x1fff'ffff   0x600
+        0x2ca        0x3ff   0x136
+        0x55c       0xffff  0xfaa4
+  0x1fff'f804  0x1fff'f807     0x4
+  0x1fff'fa08  0x1fff'ffff   0x5f8
   0x2000'0000  0x2000'17ff  0x1800
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x4:
+          0x1fff'f800   0x4
 
 
 
@@ -123,124 +138,132 @@ Unused ranges:
 *** MODULE SUMMARY
 ***
 
-    Module             ro code  rw data
-    ------             -------  -------
+    Module             ro code  ro data  rw data
+    ------             -------  -------  -------
 command line/config:
-    -----------------------------------
+    --------------------------------------------
     Total:
 
 C:\Users\ADMIN\Desktop\IAR_project\project\Debug\Obj\source_5634686896477721948.dir: [1]
-    LedBlinking.o          520
-    -----------------------------------
-    Total:                 520
+    LedBlinking.o          440                 4
+    --------------------------------------------
+    Total:                 440                 4
 
 C:\Users\ADMIN\Desktop\IAR_project\project\Debug\Obj\startup_5253055491327143397.dir: [2]
     startup_MKE16Z4.o      322
     system_MKE16Z4.o        82
-    -----------------------------------
+    --------------------------------------------
     Total:                 404
 
 dl6M_tln.a: [3]
     exit.o                   8
     low_level_init.o         4
-    -----------------------------------
+    --------------------------------------------
     Total:                  12
 
 rt6M_tl.a: [4]
     cexit.o                 10
     cmain.o                 30
     cstartup_M.o            28
-    -----------------------------------
-    Total:                  68
+    data_init.o             40
+    zero_init3.o            60
+    --------------------------------------------
+    Total:                 168
 
 shb_l.a: [5]
     exit.o                  20
-    -----------------------------------
+    --------------------------------------------
     Total:                  20
 
-    Linker created                  512
----------------------------------------
-    Grand Total:         1'024      512
+    Gaps                     2
+    Linker created                   16      512
+------------------------------------------------
+    Grand Total:         1'046       16      516
 
 
 *******************************************************************************
 *** ENTRY LIST
 ***
 
-Entry                       Address   Size  Type      Object
------                       -------   ----  ----      ------
-?main                         0x48d         Code  Gb  cmain.o [4]
-ADC0_IRQHandler               0x52d         Code  Wk  startup_MKE16Z4.o [2]
-CMP0_IRQHandler               0x52d         Code  Wk  startup_MKE16Z4.o [2]
-CSTACK$$Base            0x1fff'f800          --   Gb  - Linker created -
-CSTACK$$Limit           0x1fff'fa00          --   Gb  - Linker created -
-DefaultISR                    0x52d         Code  Wk  startup_MKE16Z4.o [2]
-FTFA_IRQHandler               0x52d         Code  Wk  startup_MKE16Z4.o [2]
-FTM0_IRQHandler               0x52d         Code  Wk  startup_MKE16Z4.o [2]
-FTM1_IRQHandler               0x52d         Code  Wk  startup_MKE16Z4.o [2]
-HardFault_Handler             0x4b7         Code  Wk  startup_MKE16Z4.o [2]
+Entry                       Address  Size  Type      Object
+-----                       -------  ----  ----      ------
+.iar.init_table$$Base         0x4a0         --   Gb  - Linker created -
+.iar.init_table$$Limit        0x4b0         --   Gb  - Linker created -
+?main                         0x4b1        Code  Gb  cmain.o [4]
+ADC0_IRQHandler               0x551        Code  Wk  startup_MKE16Z4.o [2]
+CMP0_IRQHandler               0x551        Code  Wk  startup_MKE16Z4.o [2]
+CSTACK$$Base            0x1fff'f808         --   Gb  - Linker created -
+CSTACK$$Limit           0x1fff'fa08         --   Gb  - Linker created -
+DefaultISR                    0x551        Code  Wk  startup_MKE16Z4.o [2]
+FTFA_IRQHandler               0x551        Code  Wk  startup_MKE16Z4.o [2]
+FTM0_IRQHandler               0x551        Code  Wk  startup_MKE16Z4.o [2]
+FTM1_IRQHandler               0x551        Code  Wk  startup_MKE16Z4.o [2]
+HardFault_Handler             0x4db        Code  Wk  startup_MKE16Z4.o [2]
 LPI2C0_DriverIRQHandler
-                              0x52d         Code  Wk  startup_MKE16Z4.o [2]
-LPI2C0_IRQHandler             0x4f5         Code  Wk  startup_MKE16Z4.o [2]
-LPIT0_IRQHandler              0x52d         Code  Wk  startup_MKE16Z4.o [2]
+                              0x551        Code  Wk  startup_MKE16Z4.o [2]
+LPI2C0_IRQHandler             0x519        Code  Wk  startup_MKE16Z4.o [2]
+LPIT0_IRQHandler              0x551        Code  Wk  startup_MKE16Z4.o [2]
 LPSPI0_DriverIRQHandler
-                              0x52d         Code  Wk  startup_MKE16Z4.o [2]
-LPSPI0_IRQHandler             0x4fd         Code  Wk  startup_MKE16Z4.o [2]
+                              0x551        Code  Wk  startup_MKE16Z4.o [2]
+LPSPI0_IRQHandler             0x521        Code  Wk  startup_MKE16Z4.o [2]
 LPUART0_DriverIRQHandler
-                              0x52d         Code  Wk  startup_MKE16Z4.o [2]
-LPUART0_IRQHandler            0x505         Code  Wk  startup_MKE16Z4.o [2]
+                              0x551        Code  Wk  startup_MKE16Z4.o [2]
+LPUART0_IRQHandler            0x529        Code  Wk  startup_MKE16Z4.o [2]
 LPUART1_DriverIRQHandler
-                              0x52d         Code  Wk  startup_MKE16Z4.o [2]
-LPUART1_IRQHandler            0x50d         Code  Wk  startup_MKE16Z4.o [2]
+                              0x551        Code  Wk  startup_MKE16Z4.o [2]
+LPUART1_IRQHandler            0x531        Code  Wk  startup_MKE16Z4.o [2]
 LPUART2_DriverIRQHandler
-                              0x52d         Code  Wk  startup_MKE16Z4.o [2]
-LPUART2_IRQHandler            0x515         Code  Wk  startup_MKE16Z4.o [2]
-LVD_LVW_IRQHandler            0x52d         Code  Wk  startup_MKE16Z4.o [2]
-MSCAN_DriverIRQHandler        0x52d         Code  Wk  startup_MKE16Z4.o [2]
-MSCAN_ORed_IRQHandler         0x525         Code  Wk  startup_MKE16Z4.o [2]
-MSCAN_Rx_IRQHandler           0x51d         Code  Wk  startup_MKE16Z4.o [2]
-NMI_Handler                   0x463         Code  Wk  startup_MKE16Z4.o [2]
-PDB0_IRQHandler               0x52d         Code  Wk  startup_MKE16Z4.o [2]
-PORTAE_IRQHandler             0x52d         Code  Wk  startup_MKE16Z4.o [2]
-PORTBCD_IRQHandler            0x14b  0x10e  Code  Gb  LedBlinking.o [1]
-PWT_LPTMR0_IRQHandler         0x52d         Code  Wk  startup_MKE16Z4.o [2]
-PendSV_Handler                0x535         Code  Wk  startup_MKE16Z4.o [2]
-RTC_IRQHandler                0x52d         Code  Wk  startup_MKE16Z4.o [2]
-Region$$Table$$Base             0x0          --   Gb  - Linker created -
-Region$$Table$$Limit            0x0          --   Gb  - Linker created -
-Reserved16_IRQHandler         0x52d         Code  Wk  startup_MKE16Z4.o [2]
-Reserved17_IRQHandler         0x52d         Code  Wk  startup_MKE16Z4.o [2]
-Reserved18_IRQHandler         0x52d         Code  Wk  startup_MKE16Z4.o [2]
-Reserved19_IRQHandler         0x52d         Code  Wk  startup_MKE16Z4.o [2]
-Reserved20_IRQHandler         0x52d         Code  Wk  startup_MKE16Z4.o [2]
-Reserved25_IRQHandler         0x52d         Code  Wk  startup_MKE16Z4.o [2]
-Reserved27_IRQHandler         0x52d         Code  Wk  startup_MKE16Z4.o [2]
-Reserved35_IRQHandler         0x52d         Code  Wk  startup_MKE16Z4.o [2]
-Reserved37_IRQHandler         0x52d         Code  Wk  startup_MKE16Z4.o [2]
-Reserved39_IRQHandler         0x52d         Code  Wk  startup_MKE16Z4.o [2]
-Reset_Handler                 0x465         Code  Wk  startup_MKE16Z4.o [2]
-SCG_RCM_IRQHandler            0x52d         Code  Wk  startup_MKE16Z4.o [2]
-SVC_Handler                   0x4c3         Code  Wk  startup_MKE16Z4.o [2]
-SysTick_Handler               0x537         Code  Wk  startup_MKE16Z4.o [2]
-SystemInit                    0x411   0x34  Code  Gb  system_MKE16Z4.o [2]
-SystemInitHook                0x461    0x2  Code  Wk  system_MKE16Z4.o [2]
-TSI_IRQHandler                0x52d         Code  Wk  startup_MKE16Z4.o [2]
-WDOG_EWM_IRQHandler           0x52d         Code  Wk  startup_MKE16Z4.o [2]
-__Vectors                       0x0          --   Gb  startup_MKE16Z4.o [2]
-__Vectors_End                  0xc0         Data  Gb  startup_MKE16Z4.o [2]
-__Vectors_Size {Abs}           0xc0          --   Gb  startup_MKE16Z4.o [2]
-__cmain                       0x48d         Code  Gb  cmain.o [4]
-__exit                        0x4c5   0x14  Code  Gb  exit.o [5]
-__iar_program_start           0x4d9         Code  Gb  cstartup_M.o [4]
-__low_level_init              0x4ab    0x4  Code  Gb  low_level_init.o [3]
-__vector_table                  0x0         Data  Gb  startup_MKE16Z4.o [2]
-__vector_table_0x1c            0x1c         Data  Gb  startup_MKE16Z4.o [2]
-_call_main                    0x499         Code  Gb  cmain.o [4]
-_exit                         0x4b9         Code  Gb  cexit.o [4]
-delay                         0x13b   0x10  Code  Gb  LedBlinking.o [1]
-exit                          0x4af    0x8  Code  Gb  exit.o [3]
-initLed                        0xc1   0x7a  Code  Gb  LedBlinking.o [1]
-main                          0x259   0x18  Code  Gb  LedBlinking.o [1]
+                              0x551        Code  Wk  startup_MKE16Z4.o [2]
+LPUART2_IRQHandler            0x539        Code  Wk  startup_MKE16Z4.o [2]
+LVD_LVW_IRQHandler            0x551        Code  Wk  startup_MKE16Z4.o [2]
+MSCAN_DriverIRQHandler        0x551        Code  Wk  startup_MKE16Z4.o [2]
+MSCAN_ORed_IRQHandler         0x549        Code  Wk  startup_MKE16Z4.o [2]
+MSCAN_Rx_IRQHandler           0x541        Code  Wk  startup_MKE16Z4.o [2]
+NMI_Handler                   0x44d        Code  Wk  startup_MKE16Z4.o [2]
+PDB0_IRQHandler               0x551        Code  Wk  startup_MKE16Z4.o [2]
+PORTAE_IRQHandler             0x551        Code  Wk  startup_MKE16Z4.o [2]
+PORTBCD_IRQHandler            0x14f  0x34  Code  Gb  LedBlinking.o [1]
+PWT_LPTMR0_IRQHandler         0x551        Code  Wk  startup_MKE16Z4.o [2]
+PendSV_Handler                0x559        Code  Wk  startup_MKE16Z4.o [2]
+RTC_IRQHandler                0x551        Code  Wk  startup_MKE16Z4.o [2]
+Region$$Table$$Base           0x4a0         --   Gb  - Linker created -
+Region$$Table$$Limit          0x4b0         --   Gb  - Linker created -
+Reserved16_IRQHandler         0x551        Code  Wk  startup_MKE16Z4.o [2]
+Reserved17_IRQHandler         0x551        Code  Wk  startup_MKE16Z4.o [2]
+Reserved18_IRQHandler         0x551        Code  Wk  startup_MKE16Z4.o [2]
+Reserved19_IRQHandler         0x551        Code  Wk  startup_MKE16Z4.o [2]
+Reserved20_IRQHandler         0x551        Code  Wk  startup_MKE16Z4.o [2]
+Reserved25_IRQHandler         0x551        Code  Wk  startup_MKE16Z4.o [2]
+Reserved27_IRQHandler         0x551        Code  Wk  startup_MKE16Z4.o [2]
+Reserved35_IRQHandler         0x551        Code  Wk  startup_MKE16Z4.o [2]
+Reserved37_IRQHandler         0x551        Code  Wk  startup_MKE16Z4.o [2]
+Reserved39_IRQHandler         0x551        Code  Wk  startup_MKE16Z4.o [2]
+Reset_Handler                 0x451        Code  Wk  startup_MKE16Z4.o [2]
+SCG_RCM_IRQHandler            0x551        Code  Wk  startup_MKE16Z4.o [2]
+SVC_Handler                   0x4e7        Code  Wk  startup_MKE16Z4.o [2]
+SysTick_Handler               0x55b        Code  Wk  startup_MKE16Z4.o [2]
+SystemInit                    0x279  0x34  Code  Gb  system_MKE16Z4.o [2]
+SystemInitHook                0x2c9   0x2  Code  Wk  system_MKE16Z4.o [2]
+TSI_IRQHandler                0x551        Code  Wk  startup_MKE16Z4.o [2]
+WDOG_EWM_IRQHandler           0x551        Code  Wk  startup_MKE16Z4.o [2]
+__Vectors                       0x0         --   Gb  startup_MKE16Z4.o [2]
+__Vectors_End                  0xc0        Data  Gb  startup_MKE16Z4.o [2]
+__Vectors_Size {Abs}           0xc0         --   Gb  startup_MKE16Z4.o [2]
+__cmain                       0x4b1        Code  Gb  cmain.o [4]
+__exit                        0x4e9  0x14  Code  Gb  exit.o [5]
+__iar_data_init3              0x479  0x28  Code  Gb  data_init.o [4]
+__iar_program_start           0x4fd        Code  Gb  cstartup_M.o [4]
+__iar_zero_init3              0x411  0x3c  Code  Gb  zero_init3.o [4]
+__low_level_init              0x4cf   0x4  Code  Gb  low_level_init.o [3]
+__vector_table                  0x0        Data  Gb  startup_MKE16Z4.o [2]
+__vector_table_0x1c            0x1c        Data  Gb  startup_MKE16Z4.o [2]
+_call_main                    0x4bd        Code  Gb  cmain.o [4]
+_exit                         0x4dd        Code  Gb  cexit.o [4]
+delay                         0x13d  0x12  Code  Gb  LedBlinking.o [1]
+exit                          0x4d3   0x8  Code  Gb  exit.o [3]
+initLed                        0xc1  0x7a  Code  Gb  LedBlinking.o [1]
+main                          0x183  0x9e  Code  Gb  LedBlinking.o [1]
+mode                    0x1fff'f800   0x4  Data  Gb  LedBlinking.o [1]
 
 
 [1] = C:\Users\ADMIN\Desktop\IAR_project\project\Debug\Obj\source_5634686896477721948.dir
@@ -249,8 +272,9 @@ main                          0x259   0x18  Code  Gb  LedBlinking.o [1]
 [4] = rt6M_tl.a
 [5] = shb_l.a
 
-  1'024 bytes of readonly  code memory
-    512 bytes of readwrite data memory
+  1'046 bytes of readonly  code memory
+     16 bytes of readonly  data memory
+    516 bytes of readwrite data memory
 
 Errors: none
 Warnings: none

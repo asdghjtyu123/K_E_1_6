@@ -2852,6 +2852,12 @@
         </settings>
     </configuration>
     <group>
+        <name>inc</name>
+        <file>
+            <name>$PROJ_DIR$\..\inc\MARCO.h</name>
+        </file>
+    </group>
+    <group>
         <name>source</name>
         <file>
             <name>$PROJ_DIR$\..\source\LedBlinking.c</name>
